@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible"
+        content="ie=edge" />
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #cccccc
+        }
+
+        .my-class {
+            margin-top: 100px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 3em;
+        }
+
+        .keyword {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 1.5em
+        }
+
+        .keyword:empty::before {
+            content: 'Loading ...'
+        }
+
+        .data-ready-toast {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            border: 2px solid green;
+            border-radius: 5px;
+            background: green;
+            color: #ffffff;
+            height: 50px;
+            line-height: 50px;
+            width: 250px;
+            text-align: center;
+            font-size: 18px;
+            pointer-events: none;
+        }
+
+        .data-ready-toast::after {
+            content: '\00d7';
+            position: relative;
+            top: -16px;
+            left: 48px;
+            font-size: 24px;
+            pointer-events: auto;
+        }
+
+        .data-ready-toast:hover::after {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="my-class">Event driven Javascript</div>
+    <div id="data1"
+        class="keyword"></div>
+    <div id="data2"
+        class="keyword"></div>
+    <div id="data3"
+        class="keyword"></div>
+    <div class="data-ready-toast"
+        style="display: none">
+        <span>Your data is ready</span>
+    </div>
+    <script src="main.js"
+        type="module"></script>
+</body>
+
+</html>
